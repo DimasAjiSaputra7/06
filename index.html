@@ -7,45 +7,102 @@
         body {
             font-family: Arial;
             background-color: #f4f4f4;
+            margin: 20px;
         }
-        .container {
-            width: 80%;
-            margin: auto;
+
+        h2 {
+            margin-top: 40px;
         }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #ddd;
+        }
+
+        /* LIST */
+        ul {
+            background: white;
+            padding: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+
+        /* CARD */
         .card {
             background: white;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 15px;
+            margin: 15px 0;
             border-left: 5px solid blue;
-            list-style: none;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Data Mahasiswa</h1>
+<h1>Data Mahasiswa</h1>
 
-    <!-- LIST (ul sebagai wadah) -->
-    <ul>
-        <li class="card">
-            <p><b>ID:</b> 1</p>
-            <p><b>Nama:</b> Budi</p>
-            <p><b>Jurusan:</b> Informatika</p>
-        </li>
+<!-- ================= TABEL ================= -->
+<h2>1. Tabel</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Jurusan</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Budi</td>
+        <td>Informatika</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Siti</td>
+        <td>Sistem Informasi</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Andi</td>
+        <td>Teknik Komputer</td>
+    </tr>
+</table>
 
-        <li class="card">
-            <p><b>ID:</b> 2</p>
-            <p><b>Nama:</b> Siti</p>
-            <p><b>Jurusan:</b> Sistem Informasi</p>
-        </li>
+<!-- ================= LIST ================= -->
+<h2>2. List</h2>
+<ul>
+    <li>ID: 1 - Budi (Informatika)</li>
+    <li>ID: 2 - Siti (Sistem Informasi)</li>
+    <li>ID: 3 - Andi (Teknik Komputer)</li>
+</ul>
 
-        <li class="card">
-            <p><b>ID:</b> 3</p>
-            <p><b>Nama:</b> Andi</p>
-            <p><b>Jurusan:</b> Teknik Komputer</p>
-        </li>
-    </ul>
+<!-- ================= CARD ================= -->
+<h2>3. Card</h2>
+
+<div class="card">
+    <p><b>ID:</b> 1</p>
+    <p><b>Nama:</b> Budi</p>
+    <p><b>Jurusan:</b> Informatika</p>
+</div>
+
+<div class="card">
+    <p><b>ID:</b> 2</p>
+    <p><b>Nama:</b> Siti</p>
+    <p><b>Jurusan:</b> Sistem Informasi</p>
+</div>
+
+<div class="card">
+    <p><b>ID:</b> 3</p>
+    <p><b>Nama:</b> Andi</p>
+    <p><b>Jurusan:</b> Teknik Komputer</p>
 </div>
 
 </body>
