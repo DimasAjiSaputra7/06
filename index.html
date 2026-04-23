@@ -1,1 +1,54 @@
-hasil
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Render</title>
+</head>
+<body>
+
+<h2>Data Mahasiswa</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+        <!-- hasil render muncul di sini -->
+    </tbody>
+</table>
+
+<script>
+    // Data (biasanya dari database / API)
+    const dataMahasiswa = [
+        { id: 1, nama: "Dimas", kelas: "TI01" },
+        { id: 2, nama: "Andi", kelas: "TI02" },
+        { id: 3, nama: "Budi", kelas: "TI03" }
+    ];
+
+    // Function render
+    function renderTable() {
+        const tbody = document.getElementById("table-body");
+        tbody.innerHTML = "";
+
+        dataMahasiswa.forEach(mhs => {
+            const row = `
+                <tr>
+                    <td>${mhs.id}</td>
+                    <td>${mhs.nama}</td>
+                    <td>${mhs.kelas}</td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    }
+
+    // Panggil render
+    renderTable();
+</script>
+
+</body>
+</html>
