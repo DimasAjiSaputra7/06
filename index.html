@@ -3,31 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Render Data JSON ke Tabel</title>
+    <title>Render Data Pelanggan - Single File</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background-color: #4CAF50; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
     </style>
 </head>
 <body>
 
-    <h2>Daftar Pengguna (Render Otomatis)</h2>
-    
-    <table id="target-tabel">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama Pelanggan</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody id="render-area">
-            </tbody>
-    </table>
+    <div class="container">
+        <h2>Daftar Pengguna</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="render-area">
+                </tbody>
+        </table>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Data langsung di dalam HTML
+        const dataPelanggan = [
+            { id: 1, nama: "Budi Santoso", status: "Aktif" },
+            { id: 2, nama: "Siti Aminah", status: "Proses" },
+            { id: 3, nama: "Andi Wijaya", status: "Selesai" },
+            { id: 4, nama: "Dewi Lestari", status: "Aktif" },
+            { id: 5, nama: "Rizky Ramadhan", status: "Proses" }
+        ];
+
+        function renderTabel() {
+            const renderArea = document.getElementById('render-area');
+            let htmlContent = "";
+
+            dataPelanggan.forEach(item => {
+                htmlContent += `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.nama}</td>
+                        <td>${item.status}</td>
+                    </tr>
+                `;
+            });
+
+            renderArea.innerHTML = htmlContent;
+        }
+
+        // Jalankan fungsi
+        renderTabel();
+    </script>
 </body>
 </html>
