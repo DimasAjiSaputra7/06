@@ -2,63 +2,51 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Render Data Pelanggan - Single File</title>
+    <title>Data Mahasiswa</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
-        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background-color: #4CAF50; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid blue;
+            list-style: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Daftar Pengguna</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nama</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="render-area">
-                </tbody>
-        </table>
-    </div>
+<div class="container">
+    <h1>Data Mahasiswa</h1>
 
-    <script>
-        // Data langsung di dalam HTML
-        const dataPelanggan = [
-            { id: 1, nama: "Budi Santoso", status: "Aktif" },
-            { id: 2, nama: "Siti Aminah", status: "Proses" },
-            { id: 3, nama: "Andi Wijaya", status: "Selesai" },
-            { id: 4, nama: "Dewi Lestari", status: "Aktif" },
-            { id: 5, nama: "Rizky Ramadhan", status: "Proses" }
-        ];
+    <!-- LIST (ul sebagai wadah) -->
+    <ul>
+        <li class="card">
+            <p><b>ID:</b> 1</p>
+            <p><b>Nama:</b> Budi</p>
+            <p><b>Jurusan:</b> Informatika</p>
+        </li>
 
-        function renderTabel() {
-            const renderArea = document.getElementById('render-area');
-            let htmlContent = "";
+        <li class="card">
+            <p><b>ID:</b> 2</p>
+            <p><b>Nama:</b> Siti</p>
+            <p><b>Jurusan:</b> Sistem Informasi</p>
+        </li>
 
-            dataPelanggan.forEach(item => {
-                htmlContent += `
-                    <tr>
-                        <td>${item.id}</td>
-                        <td>${item.nama}</td>
-                        <td>${item.status}</td>
-                    </tr>
-                `;
-            });
+        <li class="card">
+            <p><b>ID:</b> 3</p>
+            <p><b>Nama:</b> Andi</p>
+            <p><b>Jurusan:</b> Teknik Komputer</p>
+        </li>
+    </ul>
+</div>
 
-            renderArea.innerHTML = htmlContent;
-        }
-
-        // Jalankan fungsi
-        renderTabel();
-    </script>
 </body>
 </html>
